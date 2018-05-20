@@ -1,0 +1,21 @@
+language: go
+
+matrix:
+  include:
+    - env: CHROME_CHANNEL=beta
+      addons:
+        chrome: beta
+    - env: CHROME_CHANNEL=stable
+      addons:
+        chrome: stable
+
+go:
+  - 1.10.x
+
+install: true
+
+script:
+  - ls -la /usr/bin/google*
+  - google-chrome --version
+  - google-chrome-stable --version
+  - google-chrome-beta --version
